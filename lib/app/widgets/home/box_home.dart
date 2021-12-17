@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:yaumil_app/constant.dart';
 
-class BoxSurah extends StatelessWidget {
-  const BoxSurah({
+class BoxHome extends StatelessWidget {
+  const BoxHome({
     Key? key,
   }) : super(key: key);
 
@@ -21,7 +21,7 @@ class BoxSurah extends StatelessWidget {
           ClipRRect(
             borderRadius: BorderRadius.circular(10),
             child: Image.asset(
-              'images/laptop-1.jpg',
+              'assets/images/laptop-1.jpg',
               height: 100,
               width: 130,
               fit: BoxFit.cover,

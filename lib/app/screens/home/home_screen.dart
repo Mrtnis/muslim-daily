@@ -1,10 +1,17 @@
+import 'package:get/get.dart';
 import 'package:flutter/material.dart';
+import 'package:yaumil_app/constant.dart';
 
-import 'widgets/box_surah.dart';
-import 'widgets/card_widget.dart';
+// widget
+import 'package:yaumil_app/app/widgets/home/box_home.dart';
+import 'package:yaumil_app/app/widgets/home/card_widget.dart';
 
-class SurahScreen extends StatelessWidget {
-  const SurahScreen({Key? key}) : super(key: key);
+// screen
+import 'package:yaumil_app/app/screens/sholat/jadwal.dart';
+import 'package:yaumil_app/app/screens/surah/surah_screen.dart';
+
+class HomeScreen extends StatelessWidget {
+  const HomeScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +23,7 @@ class SurahScreen extends StatelessWidget {
           children: [
             Container(
               child: const Text('Setiabudi, Medan'),
-              padding: const EdgeInsets.symmetric(vertical: 5),
+              padding: const EdgeInsets.only(bottom: 5, top: 10),
             ),
             Container(
               child: const Text(
@@ -27,21 +34,21 @@ class SurahScreen extends StatelessWidget {
               ),
               padding: const EdgeInsets.only(bottom: 5),
             ),
-            const BoxSurah(),
+            const BoxHome(),
             Container(
               margin: const EdgeInsets.symmetric(vertical: 15),
               decoration: BoxDecoration(
-                color: const Color(0xffE0E0E0),
+                color: secondaryColor,
                 borderRadius: BorderRadius.circular(8),
               ),
               padding: const EdgeInsets.all(10),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: const [
-                   Text('Terakhir dibaca'),
-                   Spacer(),
-                   Text('Al Fatihah Ayat 1'),
-                   Icon(Icons.chevron_right),
+                  Text('Terakhir dibaca'),
+                  Spacer(),
+                  Text('Al Fatihah Ayat 1'),
+                  Icon(Icons.chevron_right),
                 ],
               ),
             ),
@@ -52,18 +59,23 @@ class SurahScreen extends StatelessWidget {
               crossAxisCount: 2,
               crossAxisSpacing: 30,
               mainAxisSpacing: 30,
-              children: const [
+              children: [
                 CardWidget(
-                  cardColor: Color(0xffE192CA),
+                  cardColor: const Color(0xffE192CA),
                   title: 'Waktu Sholat',
+                  changePage: () => Get.to(const JadwalSholatScreen()),
                 ),
                 CardWidget(
-                  cardColor:Color(0xff9ECFF9),
+                  cardColor: const Color(0xff9ECFF9),
                   title: 'Membaca \nAl-Qur\'an',
+                  changePage: () => Get.to(SurahScreen()),
                 ),
                 CardWidget(
-                  cardColor: Color(0xffFCBD7F),
+                  cardColor: const Color(0xffFCBD7F),
                   title: 'Kumpulan Do\'a',
+                  changePage: () => Get.snackbar('Fitur', 'Cooming Soon',
+                      duration: const Duration(seconds: 1),
+                      backgroundColor: Colors.white),
                 ),
               ],
             ),
