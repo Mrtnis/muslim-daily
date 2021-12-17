@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
-import 'package:yaumil_app/app/controllers/splash/splash_controller.dart';
+import 'package:yaumil_app/app/controllers/splash_controller.dart';
 
 class SplashScreen extends StatelessWidget {
   final splashController = Get.put(SplashController());

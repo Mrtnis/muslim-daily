@@ -1,13 +1,14 @@
-class Surah {
-  int? id;
+class SurahModel {
+  String? id;
   String? title;
   String? meaning;
   int? numberOfAyat;
   String? arabic;
 
-  Surah({this.id, this.title, this.meaning, this.numberOfAyat, this.arabic});
+  SurahModel(
+      {this.id, this.title, this.meaning, this.numberOfAyat, this.arabic});
 
-  Surah.fromJson(Map<String, dynamic> json) {
+  SurahModel.fromJson(Map<String, dynamic> json) {
     id = json['nomor'];
     title = json['nama'];
     meaning = json['arti'];

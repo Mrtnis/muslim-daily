@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:yaumil_app/app/models/surah_model.dart';
 import 'package:yaumil_app/constant.dart';
 
 class ListSurah extends StatelessWidget {
-  final Map<String, dynamic> surah;
+  final SurahModel surah;
 
   // ignore: use_key_in_widget_constructors
   const ListSurah({required this.surah});
@@ -16,19 +17,20 @@ class ListSurah extends StatelessWidget {
         children: [
           // number
           Container(
-            width: 35,
-            height: 35,
+            width: 38,
+            height: 38,
+            padding: const EdgeInsets.all(5),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(100),
               color: secondaryColor,
             ),
             child: Center(
               child: Text(
-                "${surah['id']}",
+                "${surah.id}",
                 style: const TextStyle(
                   color: secondaryTextColor,
                   fontWeight: FontWeight.bold,
-                  fontSize: 16,
+                  fontSize: 14,
                 ),
               ),
             ),
@@ -39,14 +41,14 @@ class ListSurah extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                "${surah['title']}",
+                "${surah.title}",
                 style: const TextStyle(
                   fontSize: 17,
                   fontWeight: FontWeight.bold,
                 ),
               ),
               Text(
-                "${surah['meaning']} | ${surah['ayat']}",
+                "${surah.meaning} | ${surah.numberOfAyat}",
                 style: const TextStyle(
                   color: secondaryTextColor,
                   fontSize: 12,
@@ -56,7 +58,7 @@ class ListSurah extends StatelessWidget {
           ),
           const Spacer(),
           // text arabic
-          const Text('Arabic'),
+          Text('${surah.arabic}'),
         ],
       ),
     );

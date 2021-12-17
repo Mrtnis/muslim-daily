@@ -63,12 +63,12 @@ class HomeScreen extends StatelessWidget {
                 CardWidget(
                   cardColor: const Color(0xffE192CA),
                   title: 'Waktu Sholat',
-                  changePage: () => Get.to(const JadwalSholatScreen()),
+                  changePage: () => Get.to(() => const JadwalSholatScreen()),
                 ),
                 CardWidget(
                   cardColor: const Color(0xff9ECFF9),
                   title: 'Membaca \nAl-Qur\'an',
-                  changePage: () => Get.to(SurahScreen()),
+                  changePage: () => Get.to(() => SurahScreen()),
                 ),
                 CardWidget(
                   cardColor: const Color(0xffFCBD7F),
